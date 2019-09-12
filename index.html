@@ -5,8 +5,8 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="London Property Hacker Widgets for Properties in London">
+  <meta name="author" content="London Property Hacker">
 
   <title>London Property Hacker Demo Page</title>
 
@@ -24,8 +24,14 @@
   <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
 
   <!-- Custom styles for this template -->
-  <link href="css/new-age.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+            integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+            crossorigin=""></script>
 </head>
 
 <body id="page-top">
@@ -47,14 +53,14 @@
             <a class="nav-link js-scroll-trigger" href="#product">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#price">Pricing & Future</a>
+            <a class="nav-link js-scroll-trigger" href="#price">Pricing & plans</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <header class="masthead" style="background-image: url('https://www.thisiscolossal.com/wp-content/uploads/2015/05/small-bridge.jpg');
+  <header class="masthead" style="background-image:url('./img/London-at-night-from-air.jpg'););
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;">
@@ -69,9 +75,9 @@
     </div>
   </header>
   <section class="download bg-primary text-center" id="description">
-    <div class="container">
+    <div class="container-fluid">
         <h2>Consider the following scenarios...</h2>
-        <div class="row">
+        <div class="row no-gutters">
             <div class="col-lg-4">
                 <h4>The Young Professional</h4>
                 <p>
@@ -110,6 +116,7 @@
                 </p>
             </div>
         </div>
+        <hr/>
         <h3>What do all these scenarios have in common?</h3>
         <p>
             In every scenario, your potential customer has to leave your website for large amounts of time to find
@@ -144,57 +151,89 @@
           <h2>Products</h2>
           <h3>Core Widgets</h3>
             <h5 class="text-muted"><em>Turbo-charge your inventory page</em></h5>
-          <p>The core widgets are available as single lines of html code that can be copied onto any webpage.</p>
-          <hr/>
+          <p>The core widgets are available as single lines of html code that can be copied onto any webpage.
+          The examples below show data for Stoke Newington</p>
+          <hr>
           <h5>Price Graph Widgets</h5>
+            <p>The price graphs show data for LSOA's (lower super output areas).There are over 600 LSOA's within London
+                which allows for a very fine level of detail. The results can be refined with other variables.
+            </p>
           <div class="row top-buffer">
             <div class="col-md-6">
+                <h6>Demand to Buy</h6>
+                <p><small>This graph shows the number of houses available to purchase vs the number that have been sold in the last
+                    month. Results can be refined by number of bedrooms.</small></p>
               <div class="Lph_W" lrh-type="buydemand" style="height: 300px;width:100%"></div>
             </div>
             <div class="col-md-6">
+                <h6>Demand to Rent</h6>
+                <p><small>This graph shows the number of houses available to rent vs the number that have been let in the last
+                    month. Results can be refined by number of bedrooms.</small></p>
               <div class="Lph_W" lrh-type="rentdemand" style="height:300px;width:100%"></div>
             </div>
           </div>
           <div class="row top-buffer">
             <div class="col-md-6">
-              <div class="Lph_W" lrh-type="buyprice" style="height:100%;width:100%"></div>
+                <h6>Average Selling Price</h6>
+                <p><small>This graph shows the average price a house sells for in the area.
+                    Results can be refined by number of bedrooms or the statistical method (mean or median).</small></p>
+              <div class="Lph_W" lrh-type="buyprice" style="height:300px;width:100%"></div>
             </div>
             <div class="col-md-6">
+                <h6>Average Letting Price</h6>
+                <p><small>This graph shows the average price a house is let for in the area.
+                    Results can be refined by number of bedrooms or the statistical method (mean or median).</small></p>
               <div class="Lph_W" lrh-type="rentprice" style="height: 300px;width:100%"></div>
             </div>
           </div>
           <div class="row top-buffer">
             <div class="col-md-6">
+                <h6>Time to Rent a Property</h6>
+                <p><small>This graph shows the average time it takes to rent a property in the area.
+                    Results can be refined by number of bedrooms.</small></p>
               <div class="Lph_W" lrh-type="renttime" style="height: 300px;width:100%"></div>
             </div>
             <div class="col-md-6">
+                <h6>Time to Sell a Property</h6>
+                <p><small>This graph shows the average time it takes to sell a property in the area.
+                    Results can be refined by number of bedrooms.</small></p>
               <div class="Lph_W" lrh-type="buytime" style="height: 300px;width:100%"></div>
             </div>
           </div>
           <div class="row top-buffer d-flex justify-content-center">
             <div class="col-md-6">
+                <h6>Cost to Rent a Room in a Property in the Area.</h6>
+                <p><small>This graph shows the cost of a room in the area.
+                    Results can be refined by number of bedrooms within the property,
+                    statistical method (mean or median) and the size of the room.</small></p>
               <div class="Lph_W" lrh-type="roomrent" style="height: 300px;width:100%"></div>
             </div>
           </div>
           <hr/>
           <h5>Map Based Widgets</h5>
+            <p>The map based widgets provide a visual overview of the surrounding area, allowing users to get a better
+            understanding of the neighbourhood before even visiting.</p>
           <div class="row top-buffer">
             <div class="col-md-6">
               <h6>Local Area Map</h6>
+                <p><small>The Local Area map shows a snapshot of the closest areas of interest to a property.</small></p>
               <div class="Lph_W" lrh-type="localarea" style="width:100%; height:300px;"></div>
             </div>
             <div class="col-md-6">
               <h6>Local Area Array Map</h6>
+                <p><small>The Local Area Array map shows a more detailed view of the local area, with lists of different points of interest.</small></p>
               <div class="Lph_W" lrh-type="localareaarray" style="width:100%; height:300px;"></div>
             </div>
           </div>
           <div class="row top-buffer">
             <div class="col-md-6">
               <h6>School Checker</h6>
+                <p><small>The School Checker provides a detailed overview of near-by schools and allows users to filter results.</small></p>
               <div class="Lph_W" lrh-type="localschool" style="width:100%; height:400px;"></div>
             </div>
             <div class="col-md-6">
               <h6>Journey Checker</h6>
+                <p><small>The Journey Checker lets users see the average journey time and cost to any other point within London with a click.</small></p>
               <div class="Lph_W" lrh-type="journeychecker" style="width:100%; height:300px;"></div>
             </div>
           </div>
@@ -202,12 +241,19 @@
                 The widgets are easy to implement. Simply copy two lines of HTML onto the desired page and <b>London Property Hacker</b>
                 will automatically do the rest.
             </p>
+            <img src="device-mockups/macbook/macbook.png">
             <h2>REST API</h2>
             <p>
-                The data that powers the widgets is also available as a REST API. See the following swagger document for details of the calls available.
+                The data that powers the widgets is also available as a REST API. Developers can use the REST API for research or to develop their own apps and widgets. See the following swagger document for details of the calls available.
             </p>
             <h2>MetaSearch gateway</h2>
-            <p></p>
+            <h3 class="text-muted">Coming Soon!</h3>
+            <p>
+                Got a search function for you inventory? Supercharge it with the Metasearch Gateway from <b>London Property Hacker!</b> The metasearch allows users
+                to refine their search using LPH's data-sets. For example, users can search for properties to rent for under £1,000 per month, with no parking permit restrictions,
+                near a play park and in the catchment area of a good school. Integrating the metasearch into your existing sytem is easy. The <b>London Property Hacker</b> filters produce polygons.
+                As long as your inventory includes geographic location (e.g. latitude and longitude), it is Metasearch Gateway compatible!
+            </p>
         </div>
       </div>
     </div>
@@ -217,88 +263,71 @@
     <div class="container">
       <div class="section-heading text-center">
         <h2>Pricing Plans</h2>
-        <p class="text-muted">Check out what you can do with this app theme!</p>
         <hr>
-      </div>
-      <div class="row">
-        <div class="col-lg-8 my-auto">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="feature-item">
-                  <i class="icon-screen-smartphone text-primary"></i>
-                  <h3>Device Mockups</h3>
-                  <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="feature-item">
-                  <i class="icon-camera text-primary"></i>
-                  <h3>Flexible Use</h3>
-                  <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
-                </div>
-              </div>
+        <div class="container-fluid group d-flex" id="pricingHolder">
+            <div class="grid-1-5 flex-fill">
+                <h2>Freemium</h2>
+                <h3><span class="uppercase">First Month Free</span></h3>
+                <h3><sup>£</sup>5<span class="small">/mo thereafter</span></h3>
+                <p>Platform Access</p>
+                <ul>
+                    <li>Basic Pricing Widgets</li>
+                    <li>Local Area Widgets</li>
+                </ul>
+                <p class="text-muted align-self-end">Platform Coming Soon!</p>
+                <a href="" class="button">Contact</a>
             </div>
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="feature-item">
-                  <i class="icon-present text-primary"></i>
-                  <h3>Free to Use</h3>
-                  <p class="text-muted">As always, this theme is free to download and use for any purpose!</p>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="feature-item">
-                  <i class="icon-lock-open text-primary"></i>
-                  <h3>Open Source</h3>
-                  <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
-                </div>
-              </div>
+            <div class="grid-1-5 flex-fill">
+                <h2>Professional</h2>
+                <h3><sup>£</sup>20<span class="small">/mo</span></h3>
+                <p>Platform Access</p>
+                <ul>
+                    <li>Access to all widgets</li>
+                    <li>Email Support</li>
+                </ul>
+                <p class="text-muted align-self-end">Platform Coming Soon!</p>
+                <a href="" class="button">Contact</a>
             </div>
-          </div>
+            <div class="grid-1-5 flex-fill">
+                <h2>Enterprise</h2>
+                <h3><sup>£</sup>50<span class="small">/mo</span></h3>
+                <p>Platform Access</p>
+                <ul>
+                    <li>Access to all widgets</li>
+                    <li>Email Support</li>
+                </ul>
+                <p>Embeddable Widgets</p>
+                <ul>
+                    <li>Ability to Embed widgets on your website</li>
+                    <li>Enhance up to 50 properties with London Property Hacker Widgets</li>
+                    <li>Email Support</li>
+                </ul>
+                <a href="" class="button">Contact</a>
+            </div>
+            <div class="grid-1-5 flex-fill">
+                <h2>Enterprise+</h2>
+                <h3><span class="uppercase">Let's Talk</span></h3>
+                <p>Embeddable Widgets</p>
+                <ul>
+                    <li>Ability to Embed widgets on your website</li>
+                    <li>Negotiable amount of properties can be enhanced with London Property Hacker widgets</li>
+                    <li>Email Support</li>
+                </ul>
+                <p>Extras</p>
+                <ul>
+                    <li>API Access</li>
+                    <li>MetaSearch Gateway - <small class="text-muted">coming soon!</small></li>
+                </ul>
+                <a href="" class="button">Contact</a>
+            </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cta">
-    <div class="cta-content">
-      <div class="container">
-        <h2>Stop waiting.<br>Start building.</h2>
-        <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
-      </div>
-    </div>
-    <div class="overlay"></div>
-  </section>
-
-  <section class="contact bg-primary" id="contact">
-    <div class="container">
-      <h2>We
-        <i class="fas fa-heart"></i>
-        new friends!</h2>
-      <ul class="list-inline list-social">
-        <li class="list-inline-item social-twitter">
-          <a href="#">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-        <li class="list-inline-item social-facebook">
-          <a href="#">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-        </li>
-        <li class="list-inline-item social-google-plus">
-          <a href="#">
-            <i class="fab fa-google-plus-g"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
   <footer>
     <div class="container">
-      <p>&copy; Your Website 2019. All Rights Reserved.</p>
+      <p>&copy; London Property Hacker 2019. All Rights Reserved.</p>
       <ul class="list-inline">
         <li class="list-inline-item">
           <a href="#">Privacy</a>
@@ -330,20 +359,19 @@
       }(window, document, 'script', 'mw', "https://nifty-banach-d86827.netlify.com/widget.js"));
 
       //Parameters:
-      mw('roomrent', {latlon:[51.5650, 0.0088],roomNum:2,type:"mean",roomsize:"double"});
-      mw('renttime', {latlon:[51.5650, 0.0088],roomNum:2,type:"mean",roomsize:"double"});
-      mw('buytime', {latlon:[51.5650, 0.0088],roomNum:2,type:"mean",roomsize:"double"});
-      mw('buyprice', {latlon:[51.5650, 0.0088],roomNum:2,type:"median",roomsize:"double"});
-      mw('buydemand', {latlon:[51.5650, 0.0088],roomNum:2,type:"median",roomsize:"double"});
-      mw('rentprice', {latlon:[51.5650, 0.0088],roomNum:2,type:"median",roomsize:"double"});
-      mw('rentdemand', {latlon:[51.5650, 0.0088],roomNum:2,type:"median",roomsize:"double"});
-      mw('journeychecker', {latlon:[51.5650, 0.0088]});
-      mw('localarea', {latlon:[51.5650, 0.0088]});
-      mw('localareaarray', {latlon:[51.5650, 0.0088]});
-      mw('localschool', {latlon:[51.5650, 0.0088]});
+      mw('roomrent', {latlon:[51.5667, -0.0833],roomNum:2,type:"mean",roomsize:"double"});
+      mw('renttime', {latlon:[51.5667, -0.0833],roomNum:2,type:"mean",roomsize:"double"});
+      mw('buytime', {latlon:[51.5667, -0.0833],roomNum:2,type:"mean",roomsize:"double"});
+      mw('buyprice', {latlon:[51.5667, -0.0833],roomNum:2,type:"median",roomsize:"double"});
+      mw('buydemand', {latlon:[51.5667, -0.0833],roomNum:2,type:"median",roomsize:"double"});
+      mw('rentprice', {latlon:[51.5667, -0.0833],roomNum:2,type:"median",roomsize:"double"});
+      mw('rentdemand', {latlon:[51.5667, -0.0833],roomNum:2,type:"median",roomsize:"double"});
+      mw('journeychecker', {latlon:[51.5667, -0.0833]});
+      mw('localarea', {latlon:[51.5667, -0.0833]});
+      mw('localareaarray', {latlon:[51.5667, -0.0833]});
+      mw('localschool', {latlon:[51.5667, -0.0833]});
       //mw('rentprice', {latlon:[51.510067,-0.133869],roomNum:1,type:"mean",roomsize:"double"});
-
-  </script>
+</script>
 
 </body>
 
